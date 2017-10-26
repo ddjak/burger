@@ -11,6 +11,16 @@ var source = {
   }
 };
 
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "Le0nard0DaV!nc1",
+    database: "burgers_db"
+  });
+};
 
 // Creating our connection
 var connection = mysql.createConnection(source.localhost);
